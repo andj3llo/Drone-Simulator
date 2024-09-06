@@ -1,0 +1,592 @@
+# A simple FPL program yielding a
+	# drawing of "ECE 2514"
+	# fpl_proj03
+
+	#Initializes Program/Drone
+		int wait 0
+		int letter_loop_count 2
+		int loop_count 2
+		int x 0
+		int y 0
+		int z 1
+		cmd <initialize>
+		cmd <arm>
+		cmd <takeoff>
+		add wait 1
+		nop wait
+
+		set x -550
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		#Draws Letter E, C, Then E again
+	ECEloop: 
+#Letter E
+		set loop_count 2
+		set x 0
+		set y 200
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 100
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+	loop1:
+		set x 0
+		set y -40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -60
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y -40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 60
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		sub loop_count 1
+		cmp loop_count 0
+
+	bne loop1
+		set x 0
+		set y -40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 150
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+	cmp letter_loop_count 1
+		beq skipC
+
+#Letter C
+		set x -60
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -40
+		set y 40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y 120
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 40
+		set y 40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 60
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y -40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -40
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -20
+		set y -20
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y -80
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 20
+		set y -20
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 40
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y -40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 50
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+	skipC:
+
+#run E again, use loop with conditional not to run through C again
+	sub letter_loop_count 1
+	cmp letter_loop_count 0
+	bne ECEloop
+
+	set x 100
+	set y 0
+	cmd <move %x %y %z>
+	add wait 1
+	nop wait	
+
+
+
+
+#Number 2
+		set x -100
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y 40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 60
+		set y 80
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y 30
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -5
+		set y 10
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -10
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -5
+		set y -10
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y -30
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -40
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y 40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 20
+		set y 40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 60
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 20
+		set y -40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y -40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -60
+		set y -80
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 60
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y -40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 150
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+#Number 5
+
+		set x -80
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -20
+		set y 40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y 10
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 40
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y -10
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 5
+		set y -10
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 10
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 5
+		set y 10
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y 40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -5
+		set y 10
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -10
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -5
+		set y -10
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -40
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y 110
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 100
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y -40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -60
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y -20
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 40
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 20
+		set y -35
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y -60
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -20
+		set y -35
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 170
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+#Number 1
+
+		set x -100
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y 40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 30
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y 120
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -30
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y 20
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 15
+		set y 20
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 55
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y -160
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 30
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y -40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 150
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+#Number 4
+		set x -60
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y 40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -50
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y 40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 40
+		set y 120
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 50
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y -120
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -50
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 20
+		set y 80
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y -80
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 50
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y -40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x -20
+		set y 0
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+		set x 0
+		set y -40
+		cmd <move %x %y %z>
+		add wait 1
+		nop wait
+
+
+
+#Lands Drone / Ends Program
+		cmd <land>
+		add wait 1
+		nop wait
+		end

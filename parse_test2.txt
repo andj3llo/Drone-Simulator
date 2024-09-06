@@ -1,0 +1,34 @@
+# Sample flight plan language program
+
+	int a          56
+	int b          30
+	int c          21
+	int loop_count 44
+	int delay      33
+
+start:
+	cmd <initialize>
+	cmd <arm>
+	cmd <takeoff>
+	cmd <move %a %b %c>	# Inserts a, b, c values
+	nop delay
+
+right:
+	add a 2
+	cmd <move %a %b %c>
+	nop delay
+
+left:
+	sub a 2
+	cmd <move %a %b %c>
+	nop delay
+
+loop_check:
+	sub loop_count 1
+	cmp loop_count 0
+	bne right
+
+done:
+	cmd <land>
+	cmd <disarm>
+	end
